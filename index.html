@@ -109,7 +109,6 @@
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-navy/90 backdrop-blur-md border-b border-white/10 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
@@ -124,7 +123,7 @@
                 <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide items-center">
                     <a href="#" class="hover:text-gold transition-colors text-white">Beranda</a>
                     <a href="#tracking" class="hover:text-gold transition-colors text-white">Lacak Berkas</a>
-                    <a href="#stats" class="hover:text-gold transition-colors text-white">Dashboard</a>
+                    <a href="#stats" class="hover:text-gold transition-colors text-white">Dashboard GERCEP!</a>
                     <a href="https://api.whatsapp.com/send?phone=6282353402431" target="_blank" 
                        class="bg-white/10 hover:bg-white/20 px-5 py-2.5 rounded-full transition-all flex items-center gap-2">
                         Konsultasi Online
@@ -139,22 +138,19 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden-menu absolute w-full bg-navy border-b border-white/10 px-4 py-6 space-y-4">
             <a href="#" class="block text-lg font-medium hover:text-gold">Beranda</a>
             <a href="#tracking" class="block text-lg font-medium hover:text-gold">Lacak Berkas</a>
-            <a href="#stats" class="block text-lg font-medium hover:text-gold">Dashboard</a>
+            <a href="#stats" class="block text-lg font-medium hover:text-gold">Dashboard GERCEP!</a>
             <hr class="border-white/10">
             <a href="https://api.whatsapp.com/send?phone=6282353402431" target="_blank" class="block text-gold font-bold">Konsultasi WhatsApp</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="relative h-screen min-h-[750px] flex items-center pt-20 overflow-hidden hero-gradient">
         <div class="slider-container">
-            <!-- Ganti URL background sesuai aset Anda -->
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80');"></div>
+            <div class="slide active" style="background-image: url('gercep wana biru.jpg');"></div>
+            <div class="slide" style="background-image: url('alur gercep 3 hari kerja banner.jpg');"></div>
         </div>
 
         <div class="absolute inset-0 bg-gradient-to-b from-navy/30 via-navy/60 to-navy z-1"></div>
@@ -170,14 +166,13 @@
                     </p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                         <a href="#tracking" class="px-10 py-4 btn-gold rounded-xl font-bold uppercase text-xs tracking-widest text-center shadow-2xl">Mulai Lacak</a>
-                        <a href="#stats" class="px-10 py-4 border border-white/40 hover:bg-white/10 rounded-xl font-bold uppercase text-xs tracking-widest transition-all text-center">Dashboard</a>
+                        <a href="#stats" class="px-10 py-4 border border-white/40 hover:bg-white/10 rounded-xl font-bold uppercase text-xs tracking-widest transition-all text-center">Dashboard GERCEP!</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tracking Section -->
     <section id="tracking" class="relative -mt-24 z-20 pb-20 scroll-mt-24">
         <div class="max-w-5xl mx-auto px-4">
             <div class="bg-white rounded-[2.5rem] custom-shadow p-8 md:p-14 border border-slate-100">
@@ -217,7 +212,6 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
     <section id="stats" class="py-24 bg-white overflow-hidden scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -243,7 +237,6 @@
                 </div>
                 
                 <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <!-- Stat Card: Selesai -->
                     <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100 flex items-center justify-between transition-all hover:shadow-md">
                         <div>
                             <p class="text-slate-400 text-[10px] font-bold uppercase mb-1">Berkas Selesai</p>
@@ -254,7 +247,6 @@
                         </div>
                     </div>
                     
-                    <!-- Stat Card: Proses -->
                     <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100 flex items-center justify-between transition-all hover:shadow-md">
                         <div>
                             <p class="text-slate-400 text-[10px] font-bold uppercase mb-1">Berkas Dalam Proses</p>
@@ -265,7 +257,6 @@
                         </div>
                     </div>
                     
-                    <!-- Stat Card: Kendala -->
                     <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100 flex items-center justify-between transition-all hover:shadow-md">
                         <div>
                             <p class="text-slate-400 text-[10px] font-bold uppercase mb-1">Berkas Kendala</p>
@@ -276,7 +267,6 @@
                         </div>
                     </div>
                     
-                    <!-- Stat Card: Total -->
                     <div class="p-6 bg-navy rounded-3xl shadow-xl flex items-center justify-between text-white transition-all hover:scale-[1.02]">
                         <div>
                             <p class="text-white/40 text-[10px] font-bold uppercase mb-1">Total Berkas</p>
@@ -291,7 +281,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-navy text-white pt-20 pb-10">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-extrabold mb-8">Kantah Kota Bitung</h2>
@@ -305,13 +294,12 @@
         </div>
     </footer>
 
-    <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 px-6 py-3 bg-navy text-gold rounded-xl shadow-2xl text-xs font-bold opacity-0 translate-y-4 transition-all pointer-events-none z-[100] border border-gold/20">
         <span id="toast-msg"></span>
     </div>
 
     <script>
-        // CONFIGURATION
+        // KONFIGURASI URL GAS (Gunakan yang paling baru)
         const GAS_URL = "https://script.google.com/macros/s/AKfycbyCHsS2vzsL8f4SHST5YuP8t8m6mPgeQHS7rxlmQzkXapaLzl1z7NKOTSIuvdNBLz7t_w/exec";
 
         // Slider Logic
@@ -324,7 +312,7 @@
         }
         setInterval(nextSlide,5000);
 
-        // Mobile Menu Logic
+        // Menu Mobile
         const menuBtn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
@@ -339,7 +327,7 @@
             }
         });
 
-        // Chart.js Initialization
+        // Chart Logic
         let perfChart;
         function initChart(dataValues = [0,0,0]) {
             const ctx = document.getElementById('performanceChart').getContext('2d');
@@ -365,13 +353,13 @@
             });
         }
 
-        // FETCH DATA FROM GAS
+        // LOAD DATA UTAMA (Stats & Info)
         async function loadData() {
             try {
                 const response = await fetch(GAS_URL);
                 const data = await response.json();
                 
-                // Update Statistics
+                // 1. Update Statistik Angka
                 const stats = data.statistik[0];
                 const selesai = parseInt(stats.berkasSelesai || 0);
                 const proses = parseInt(stats.berkasDalamProses || 0);
@@ -388,7 +376,7 @@
                 
                 document.getElementById('lastUpdated').innerText = new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}) + ' WITA';
                 
-                // Store global info for search
+                // 2. Simpan Data Informasi ke Global untuk pencarian
                 window.globalInformasi = data.informasi;
 
             } catch (err) {
@@ -411,8 +399,8 @@
             window.requestAnimationFrame(step);
         }
 
-        // SEARCH FUNCTIONALITY
-        document.getElementById('searchForm').addEventListener('submit',(e) => {
+        // SEARCH LOGIC
+        document.getElementById('searchForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const input = document.getElementById('searchInput').value.trim();
             const resultArea = document.getElementById('resultArea');
@@ -423,12 +411,12 @@
             notFound.classList.add('hidden');
             loading.classList.remove('hidden');
 
-            // Simulated network delay
+            // Simulasi delay sebentar agar user merasa sistem sedang mencari
             setTimeout(() => {
                 loading.classList.add('hidden');
                 
                 if(!window.globalInformasi) {
-                    showToast("Data belum siap, silakan coba lagi.");
+                    showToast("Data belum siap, silakan refresh.");
                     return;
                 }
 
@@ -443,23 +431,16 @@
                 } else { 
                     notFound.classList.remove('hidden'); 
                 }
-            },600);
+            }, 600);
         });
 
         function renderResult(b) {
             const waLink = `https://api.whatsapp.com/send?phone=6282353402431&text=Halo%20Admin%20Gercep,%20saya%20ingin%20tanya%20progres%20berkas%20nomor%20${encodeURIComponent(b.noBerkas)}`;
-            const item = (label,value,isBold = false) => `
-                <div class="space-y-1">
-                    <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest text-center md:text-left">${label}</p>
-                    <p class="${isBold ? 'font-extrabold text-navy' : 'font-medium text-slate-700'} text-sm leading-snug text-center md:text-left">${value || '-'}</p>
-                </div>`;
+            const item = (label,value,isBold = false) => `<div class="space-y-1"><p class="text-[10px] font-black uppercase text-slate-400 tracking-widest text-center md:text-left">${label}</p><p class="${isBold ? 'font-extrabold text-navy' : 'font-medium text-slate-700'} text-sm leading-snug text-center md:text-left">${value || '-'}</p></div>`;
             
             const html = `
                 <div class="bg-white rounded-[2rem] border border-slate-200 overflow-hidden shadow-sm">
-                    <div class="px-8 py-4 bg-navy text-white flex justify-between items-center">
-                        <span class="text-[10px] font-black uppercase tracking-[0.2em]">Detail Berkas</span>
-                        <span class="px-2 py-0.5 bg-gold text-navy rounded text-[8px] font-black uppercase">Data Terkini</span>
-                    </div>
+                    <div class="px-8 py-4 bg-navy text-white flex justify-between items-center"><span class="text-[10px] font-black uppercase tracking-[0.2em]">Detail Berkas</span><span class="px-2 py-0.5 bg-gold text-navy rounded text-[8px] font-black uppercase">Data Terkini</span></div>
                     <div class="p-8">
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 pb-10 border-b border-slate-100">
                             ${item('No Berkas',b.noBerkas,true)}
@@ -486,9 +467,9 @@
                                 <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48 2.242 2.242 3.48 5.227 3.48 8.403 0 6.556-5.332 11.888-11.888 11.888-2.016 0-3.993-.513-5.748-1.487l-6.239 1.713zm6.239-4.301c1.556.924 3.085 1.411 4.673 1.411 5.397 0 9.791-4.394 9.791-9.791 0-2.613-1.017-5.07-2.864-6.917-1.847-1.847-4.303-2.864-6.917-2.864-5.397 0-9.791 4.394-9.791 9.791 0 1.712.463 3.385 1.339 4.839l-1.004 3.666 3.773-1.035zm11.23-6.494c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.073-.124-.272-.198-.57-.347z"/></svg>
                                 </div>
-                                <p class="text-xs font-bold text-navy/70 uppercase tracking-tight">Koordinasi Lebih Lanjut!</p>
+                                <p class="text-xs font-bold text-navy/70 uppercase tracking-tight">Butuh bantuan lebih lanjut?</p>
                             </div>
-                            <a href="${waLink}" target="_blank" class="px-6 py-3 bg-navy text-white rounded-xl text-xs font-bold hover:scale-105 transition-transform flex items-center gap-2">Chat Petugas Ukur</a>
+                            <a href="${waLink}" target="_blank" class="px-6 py-3 bg-navy text-white rounded-xl text-xs font-bold hover:scale-105 transition-transform flex items-center gap-2">Hubungi Admin</a>
                         </div>
                     </div>
                 </div>
