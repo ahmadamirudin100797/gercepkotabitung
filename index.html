@@ -311,16 +311,19 @@ let perfChart;
 let globalInformasi = [];
 
 const sliderContainer = document.getElementById('mainSlider');
-const slides = document.querySelectorAll('.slide');
 let currentIdx = 0;
-const slidesCount = slides.length;
+const totalSlides = 4; // karena kamu punya 4 slide
 
 function nextSlide() {
-    currentIdx = (currentIdx + 1) % slidesCount;
+    currentIdx++;
+    if (currentIdx >= totalSlides) {
+        currentIdx = 0;
+    }
     sliderContainer.style.transform = `translateX(-${currentIdx * 25}%)`;
 }
 
 setInterval(nextSlide, 5000);
+
 
 
 const menuBtn = document.getElementById('mobile-menu-btn');
