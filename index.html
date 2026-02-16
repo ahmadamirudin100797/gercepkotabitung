@@ -29,20 +29,21 @@
             overflow: hidden;
             z-index: 0;
         }
-       .slider-container {
-    display: flex;
-    height: 100%;
-    width: 500%; 
-    transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
+         .slider-container {
+            display: flex;
+            height: 100%;
+            width: 400%; 
+            transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+        }
+
         .slide {
-    width: 20%; 
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    flex-shrink: 0;
-    position: relative; 
-}
+            width: 25%; 
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+        }
 
         .content-frame {
             border: 2px solid rgba(255,215,0,0.3);
@@ -150,30 +151,34 @@
         </div>
     </nav>
 
-  <div class="slider-container" id="mainSlider">
-    <div class="slide flex items-center justify-center lg:justify-start px-4 sm:px-6 lg:px-8" style="background-image: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)), url('gercep wana biru.jpg');">
-        <div class="text-white animate-fade-in transition-all duration-700">
-            <div class="content-frame hero-float">
-                <h1 class="text-6xl lg:text-8xl font-extrabold leading-[1.1] mb-8 tracking-tighter">
-                    Gerak Cepat <br><span class="text-gold italic">Pengukuran</span>
-                </h1>
-                <p class="text-xl lg:text-2xl text-slate-200 mb-12 leading-relaxed font-medium">
-                    Inovasi Seksi Survei dan Pemetaan Kantor Pertanahan Kota Bitung dalam rangka memberikan kepastian jadwal pengukuran, kepastian jadwal penyelesaian, serta update informasi berkas secara real-time untuk masyarakat Kota Bitung.
-                </p>
-                <div class="flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-6">
-                    <a href="#tracking" class="px-12 py-5 btn-gold rounded-2xl font-black uppercase text-sm tracking-widest text-center shadow-2xl">Mulai Lacak</a>
-                    <a href="#stats" class="px-12 py-5 border-2 border-white/40 hover:bg-white/10 rounded-2xl font-black uppercase text-sm tracking-widest transition-all text-center">Dashboard GERCEP!</a>
+      <section class="relative h-screen min-h-[850px] flex items-center pt-20 overflow-hidden hero-gradient">
+        <div class="slider-wrapper">
+            <div class="slider-container" id="mainSlider">
+                <div class="slide" style="background-image: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)), url('gercep wana biru.jpg');"></div>
+                <div class="slide" style="background-image: url('alur gercep 3 hari kerja banner.png');"></div>
+                <div class="slide" style="background-image: url('alur pendaftaran sk hak.jpeg');"></div>
+                <div class="slide" style="background-image: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)), url('gercep wana biru.jpg');"></div>
+            </div>
+        </div>
+
+        <div class="absolute inset-0 bg-gradient-to-b from-navy/30 via-navy/60 to-navy z-1"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center lg:justify-start">
+            <div id="heroTextContent" class="text-white animate-fade-in transition-all duration-700">
+                <div class="content-frame hero-float">
+                    <h1 class="text-6xl lg:text-8xl font-extrabold leading-[1.1] mb-8 tracking-tighter">
+                        Gerak Cepat <br><span class="text-gold italic">Pengukuran</span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl text-slate-200 mb-12 leading-relaxed font-medium">
+                        Inovasi Seksi Survei dan Pemetaan Kantor Pertanahan Kota Bitung dalam rangka memberikan kepastian jadwal pengukuran, kepastian jadwal penyelesaian, serta update informasi berkas secara real-time untuk masyarakat Kota Bitung.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-6">
+                        <a href="#tracking" class="px-12 py-5 btn-gold rounded-2xl font-black uppercase text-sm tracking-widest text-center shadow-2xl">Mulai Lacak</a>
+                        <a href="#stats" class="px-12 py-5 border-2 border-white/40 hover:bg-white/10 rounded-2xl font-black uppercase text-sm tracking-widest transition-all text-center">Dashboard GERCEP!</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="slide" style="background-image: url('alur gercep 3 hari kerja banner.png');"></div>
-    <div class="slide" style="background-image: url('alur pendaftaran sk hak.jpeg');"></div>
-    <div class="slide flex items-center justify-center lg:justify-start px-4 sm:px-6 lg:px-8" style="background-image: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)), url('gercep wana biru.jpg');">
-         </div>
-    <div class="slide" style="background-image: url('alur gercep 3 hari kerja banner.png');"></div>
-</div>
-
+    </section>
     <section id="tracking" class="relative -mt-24 z-20 pb-20 scroll-mt-24">
         <div class="max-w-5xl mx-auto px-4">
             <div class="bg-white rounded-[2.5rem] custom-shadow p-8 md:p-14 border border-slate-100">
