@@ -29,11 +29,12 @@
             overflow: hidden;
             z-index: 0;
         }
-       .slider-container {
-        display: flex;
-        height: 100%;
-        width: 400%; 
-        transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+     .slider-container {
+    display: flex;
+    height: 100%;
+    width: 400%;
+}
+
     }
     .slide {
         width: 25%; 
@@ -310,39 +311,43 @@
 
 const sliderContainer = document.getElementById('mainSlider');
 const heroText = document.getElementById('heroTextContent');
+
 let currentIdx = 0;
 const totalSlides = 4;
 
-function nextSlide() {
-    currentIdx++;
-    
-    sliderContainer.style.transition = "transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1)";
-    sliderContainer.style.transform = `translateX(-${(currentIdx * 100) / totalSlides}%)`;
-
+function updateHeroVisibility() {
     if (currentIdx === 0 || currentIdx === 3) {
         heroText.style.display = "block";
-        setTimeout(() => {
-            heroText.style.opacity = "1";
-            heroText.style.pointerEvents = "auto";
-        }, 50);
+        heroText.style.opacity = "1";
+        heroText.style.pointerEvents = "auto";
     } else {
         heroText.style.opacity = "0";
         heroText.style.pointerEvents = "none";
-        setTimeout(() => { 
-            if(currentIdx !== 0 && currentIdx !== 3) heroText.style.display = "none"; 
+        setTimeout(() => {
+            if (currentIdx !== 0 && currentIdx !== 3) {
+                heroText.style.display = "none";
+            }
         }, 400);
     }
+}
+
+function nextSlide() {
+    currentIdx++;
+    sliderContainer.style.transition = "transform 1.2s ease-in-out";
+    sliderContainer.style.transform = `translateX(-${currentIdx * 25}%)`;
+    updateHeroVisibility();
 
     if (currentIdx === 3) {
         setTimeout(() => {
             sliderContainer.style.transition = "none";
             currentIdx = 0;
-            sliderContainer.style.transform = `translateX(0)`;
+            sliderContainer.style.transform = "translateX(0%)";
+            updateHeroVisibility();
         }, 1200);
     }
 }
 
-setInterval(nextSlide, 5000);
+setInterval(nextSlide, 7000);
 
         // UI Interactions (Menu Mobile)
         const menuBtn = document.getElementById('mobile-menu-btn');
