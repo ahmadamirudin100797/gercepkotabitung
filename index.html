@@ -412,10 +412,10 @@ function animateValue(id,start,end,duration){
 document.getElementById('searchForm').addEventListener('submit',(e)=>{
     e.preventDefault();
 
-    const input=document.getElementById('searchInput').value.trim().toLowerCase();
-    const resultArea=document.getElementById('resultArea');
-    const notFound=document.getElementById('notFoundState');
-    const loading=document.getElementById('loadingState');
+    const input = document.getElementById('searchInput').value.trim().toLowerCase();
+    const resultArea = document.getElementById('resultArea');
+    const notFound = document.getElementById('notFoundState');
+    const loading = document.getElementById('loadingState');
 
     resultArea.classList.add('hidden');
     notFound.classList.add('hidden');
@@ -424,8 +424,8 @@ document.getElementById('searchForm').addEventListener('submit',(e)=>{
     setTimeout(()=>{
         loading.classList.add('hidden');
 
-        const berkas=globalInformasi.find(item =>
-            String(item.noBerkas).trim().toLowerCase()===input
+        const berkas = globalInformasi.find(item =>
+            String(item.noBerkas).trim().toLowerCase() === input
         );
 
         if(berkas){
@@ -436,6 +436,7 @@ document.getElementById('searchForm').addEventListener('submit',(e)=>{
         }
     },500);
 });
+
 
 function renderResult(b){
     const nomorTujuan = b.kontakPetugasUkur || "6282353402431";
