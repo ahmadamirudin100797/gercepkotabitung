@@ -29,20 +29,19 @@
             overflow: hidden;
             z-index: 0;
         }
-     .slider-container {
-    display: flex;
-    height: 100%;
-    width: 400%;
-}
-
-    }
-    .slide {
-        width: 25%; 
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        flex-shrink: 0;
-    }
+        .slider-container {
+            display: flex;
+            height: 100%;
+            width: 400%; 
+            transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        .slide {
+            width: 25%; 
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+        }
 
         .content-frame {
             border: 2px solid rgba(255,215,0,0.3);
@@ -151,14 +150,14 @@
     </nav>
 
     <section class="relative h-screen min-h-[850px] flex items-center pt-20 overflow-hidden hero-gradient">
-     <div class="slider-wrapper">
-    <div class="slider-container" id="mainSlider">
-        <div class="slide" style="background-image: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)), url('gercep wana biru.jpg');"></div>
-        <div class="slide" style="background-image: url('alur gercep 3 hari kerja banner.png');"></div>
-        <div class="slide" style="background-image: url('alur pendaftaran sk hak.jpeg');"></div>
-        <div class="slide" style="background-image: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)), url('gercep wana biru.jpg');"></div>
-    </div>
-</div>
+        <div class="slider-wrapper">
+            <div class="slider-container" id="mainSlider">
+                <div class="slide" style="background-image: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)), url('gercep wana biru.jpg');"></div>
+                <div class="slide" style="background-image: url('alur gercep 3 hari kerja banner.png');"></div>
+                <div class="slide" style="background-image: url('alur pendaftaran sk hak.jpeg');"></div>
+                <div class="slide" style="background-image: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)), url('gercep wana biru.jpg');"></div>
+            </div>
+        </div>
 
         <div class="absolute inset-0 bg-gradient-to-b from-navy/30 via-navy/60 to-navy z-1"></div>
 
@@ -309,45 +308,43 @@
         const API_BERKAS = "https://api.sheety.co/faa1bfb669e83efa1c804947c1197ed9/gercep/informasiBerkasGercep2026";
         const API_STATS = "https://api.sheety.co/faa1bfb669e83efa1c804947c1197ed9/gercep/statistikBerkasPengukuran";
 
-const sliderContainer = document.getElementById('mainSlider');
-const heroText = document.getElementById('heroTextContent');
+        // LOGIKA SLIDER PERBAIKAN: GESER KE KIRI TERUS MENERUS
+        const sliderContainer = document.getElementById('mainSlider');
+        const heroText = document.getElementById('heroTextContent');
+        let currentIdx = 0;
+        const slidesCount = 3; 
 
-let currentIdx = 0;
-const totalSlides = 4;
+        function nextSlide() {
+            currentIdx++;
+            
+            // Efek geser ke kiri
+            sliderContainer.style.transition = "transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1)";
+            sliderContainer.style.transform = `translateX(-${(currentIdx * 100) / (slidesCount + 1)}%)`;
 
-function updateHeroVisibility() {
-    if (currentIdx === 0 || currentIdx === 3) {
-        heroText.style.display = "block";
-        heroText.style.opacity = "1";
-        heroText.style.pointerEvents = "auto";
-    } else {
-        heroText.style.opacity = "0";
-        heroText.style.pointerEvents = "none";
-        setTimeout(() => {
-            if (currentIdx !== 0 && currentIdx !== 3) {
-                heroText.style.display = "none";
+            // Atur Visibilitas Teks (Hanya muncul di Slide Utama/Pertama)
+            if (currentIdx === 0 || currentIdx === slidesCount) {
+                heroText.style.display = "block";
+                setTimeout(() => {
+                    heroText.style.opacity = "1";
+                    heroText.style.pointerEvents = "auto";
+                }, 50);
+            } else {
+                heroText.style.opacity = "0";
+                heroText.style.pointerEvents = "none";
+                setTimeout(() => { if(currentIdx !== 0 && currentIdx !== slidesCount) heroText.style.display = "none"; }, 400);
             }
-        }, 400);
-    }
-}
 
-function nextSlide() {
-    currentIdx++;
-    sliderContainer.style.transition = "transform 1.2s ease-in-out";
-    sliderContainer.style.transform = `translateX(-${currentIdx * 25}%)`;
-    updateHeroVisibility();
+            // Reset ke posisi awal tanpa animasi jika sudah di slide clone (untuk loop mulus)
+            if (currentIdx === slidesCount) {
+                setTimeout(() => {
+                    sliderContainer.style.transition = "none";
+                    currentIdx = 0;
+                    sliderContainer.style.transform = `translateX(0)`;
+                }, 1200);
+            }
+        }
 
-    if (currentIdx === 3) {
-        setTimeout(() => {
-            sliderContainer.style.transition = "none";
-            currentIdx = 0;
-            sliderContainer.style.transform = "translateX(0%)";
-            updateHeroVisibility();
-        }, 1200);
-    }
-}
-
-setInterval(nextSlide, 7000);
+        setInterval(nextSlide, 5000);
 
         // UI Interactions (Menu Mobile)
         const menuBtn = document.getElementById('mobile-menu-btn');
