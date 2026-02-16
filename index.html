@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -329,7 +329,7 @@ function nextSlide() {
     if (currentIdx >= totalSlides) {
         currentIdx = 0;
     }
-    sliderContainer.style.transform = translateX(-${currentIdx * 25}%);
+    sliderContainer.style.transform = `translateX(-${currentIdx * 25}%)`;
 }
 
 setInterval(nextSlide, 5000);
@@ -465,15 +465,18 @@ function renderResult(b) {
     // 1. Bersihkan nomor WA dan siapkan link
     const rawWa = b.kontakPetugasUkur || "6282353402431";
     const waNumber = String(rawWa).replace(/[^0-9]/g, '');
-    const waLink = https://api.whatsapp.com/send?phone=${waNumber}&text=Halo,%20saya%20ingin%20tanya%20progres%20berkas%20nomor%20${encodeURIComponent(b.noBerkas)};
+    const waLink = `https://api.whatsapp.com/send?phone=${waNumber}&text=Halo,%20saya%20ingin%20tanya%20progres%20berkas%20nomor%20${encodeURIComponent(b.noBerkas)}`;
 
     // 2. Helper untuk komponen item (Label kecil di atas, Value tebal di bawah)
-    const item = (label, value) =>         <div>
+    const item = (label, value) => `
+        <div>
             <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">${label}</p>
             <p class="text-navy font-bold text-base md:text-lg leading-tight">${value || '-'}</p>
-        </div>;
+        </div>`;
+
     // 3. Struktur HTML sesuai Gambar Referensi
-    const html =         <div class="bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-slate-100 animate-fade-in mx-auto max-w-5xl">
+    const html = `
+        <div class="bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-slate-100 animate-fade-in mx-auto max-w-5xl">
             <div class="bg-navy px-8 py-5 flex justify-between items-center">
                 <h3 class="text-white text-[11px] font-black uppercase tracking-[0.2em]">Detail Berkas Pelacakan</h3>
                 <span class="bg-gold text-navy text-[9px] font-black px-4 py-1.5 rounded-full uppercase tracking-tighter">Data Terkini</span>
@@ -530,7 +533,8 @@ function renderResult(b) {
                 </div>
             </div>
         </div>
-    ;
+    `;
+
     document.getElementById('resultContent').innerHTML = html;
 }
 function showToast(msg){
@@ -547,4 +551,4 @@ window.onload=()=>{
 </script>
 
     </body>
-</html> 
+</html>  
