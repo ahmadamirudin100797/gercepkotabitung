@@ -28,8 +28,8 @@
             inset: 0;
             z-index: 0;
             display: flex;
-            transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-            width: 400%; 
+            transition: transform 1.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+            width: 400%;
         }
         .slide {
             width: 25%;
@@ -39,8 +39,7 @@
             flex-shrink: 0;
         }
 
-        /* Modern Box Frame */
-      .content-frame {
+        .content-frame {
             border: 2px solid rgba(255,215,0,0.3);
             padding: 4rem;
             position: relative;
@@ -69,7 +68,6 @@
             border-bottom: 5px solid var(--gold);
             border-right: 5px solid var(--gold);
         }
-
 
         .bg-navy { background-color: var(--navy); }
         .text-gold { color: var(--gold); }
@@ -148,29 +146,24 @@
         </div>
     </nav>
 
-  <section class="relative h-screen min-h-[850px] flex items-center pt-20 overflow-hidden hero-gradient">
-    <<div class="slider-container" id="mainSlider">
-    <div class="slide" style="background-image: url('slide1.jpg');"></div>
-    <div class="slide" style="background-image: url('slide2.jpg');"></div>
-    <div class="slide" style="background-image: url('slide3.jpg');"></div>
-
-    <!-- CLONE slide pertama -->
-    <div class="slide" style="background-image: url('slide1.jpg');"></div>
+<section class="relative h-screen min-h-[850px] flex items-center pt-20 overflow-hidden hero-gradient">
+<div class="slider-container" id="mainSlider">
+    <div class="slide" style="background-image: url('alur gercep 3 hari kerja banner.png');"></div>
+    <div class="slide" style="background-image: url('alur pendaftaran sk hak.jpeg');"></div>
 </div>
 
-
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center lg:justify-start">
-        <div id="heroTextContent" class="text-white animate-fade-in transition-all duration-700">
-            <div class="content-frame">
-                <h1 class="text-6xl lg:text-8xl font-extrabold leading-[1.1] mb-8 tracking-tighter">
-                    Gerak Cepat <br><span class="text-gold italic">Pengukuran</span>
-                </h1>
-                <p class="text-xl lg:text-2xl text-slate-200 mb-12 leading-relaxed font-medium">
-                    Inovasi Seksi Survei dan Pemetaan Kantor Pertanahan Kota Bitung dalam rangka memberikan kepastian jadwal pengukuran, kepastian jadwal penyelesaian, serta update informasi berkas secara real-time untuk masyarakat Kota Bitung.
-                </p>
-            </div>
+   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center lg:justify-start">
+    <div id="heroTextContent" class="text-white animate-fade-in transition-all duration-700">
+        <div class="content-frame">
+            <h1 class="text-6xl lg:text-8xl font-extrabold leading-[1.1] mb-8 tracking-tighter">
+                Gerak Cepat <br><span class="text-gold italic">Pengukuran</span>
+            </h1>
+            <p class="text-xl lg:text-2xl text-slate-200 mb-12 leading-relaxed font-medium">
+                Inovasi Seksi Survei dan Pemetaan Kantor Pertanahan Kota Bitung dalam rangka memberikan kepastian jadwal pengukuran, kepastian jadwal penyelesaian, serta update informasi berkas secara real-time untuk masyarakat Kota Bitung.
+            </p>
         </div>
     </div>
+</div>
 </section>
 
 
@@ -305,15 +298,25 @@
         const GAS_URL = "https://script.google.com/macros/s/AKfycbwQq-QZPZ5JuW-v3YO6Mu90fl7ojMRn-sqLdBYOWoLTfpDrYNQaNiZPdKPZzRTfw_NX0w/exec";
 
 
-     const sliderContainer = document.getElementById('mainSlider');
+const sliderContainer = document.getElementById('mainSlider');
 const heroText = document.getElementById('heroTextContent');
 let currentIdx = 0;
-const totalSlides = 4;
+const slidesCount = 3;
 
+function nextSlide() {
+    currentIdx++;
 
-    function nextSlide() {
-    currentIdx = (currentIdx + 1) % totalSlides;
-    sliderContainer.style.transform = `translateX(-${currentIdx * 100}%)`;
+    sliderContainer.style.transition = "transform 1.4s cubic-bezier(0.645, 0.045, 0.355, 1)";
+    sliderContainer.style.transform =
+        `translateX(-${(currentIdx * 100) / (slidesCount + 1)}%)`;
+
+    if (currentIdx === slidesCount) {
+        setTimeout(() => {
+            sliderContainer.style.transition = "none";
+            currentIdx = 0;
+            sliderContainer.style.transform = `translateX(0)`;
+        }, 1400);
+    }
 
     if (currentIdx !== 0) {
         heroText.style.opacity = "0";
@@ -329,7 +332,6 @@ const totalSlides = 4;
 }
 
 setInterval(nextSlide, 7000);
-
         // Menu Mobile
         const menuBtn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
