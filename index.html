@@ -23,50 +23,62 @@
         }
 
         /* Cinematic Background Slider */
-       .slider-container {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            display: flex;
-            transition: transform 1.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-            width: 400%;
-        }
-        .slide {
-            width: 25%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            flex-shrink: 0;
+/* Cinematic Background Slider - Modern Sliding Version */
+    .slider-container {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        display: flex;
+        width: 300%; /* Karena ada 3 slide (Utama -> Banner -> Clone Utama) */
+        transition: transform 1.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    .slide {
+        width: 33.333%; /* 100% dibagi 3 slide */
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        flex-shrink: 0;
+    }
+    /* Overlay tetap ada agar teks terbaca */
+    .slider-overlay {
+        position: absolute;
+        inset: 0;
+        background: gradient-to-b from-navy/30 via-navy/60 to-navy;
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(10,25,47,0.3) 0%, rgba(10,25,47,0.6) 50%, rgba(10,25,47,1) 100%);
+    }
+        .slide.active {
+            opacity: 0.4;
         }
 
+        /* Modern Box Frame */
         .content-frame {
             border: 2px solid rgba(255,215,0,0.3);
-            padding: 4rem;
+            padding: 3rem;
             position: relative;
-            border-radius: 8px;
-            background: rgba(10,25,47,0.6);
-            backdrop-filter: blur(12px);
-            max-width: 900px;
+            border-radius: 4px;
+            background: rgba(10,25,47,0.5);
+            backdrop-filter: blur(8px);
         }
         .content-frame::before {
             content: '';
             position: absolute;
-            top: -15px;
-            left: -15px;
-            width: 60px;
-            height: 60px;
-            border-top: 5px solid var(--gold);
-            border-left: 5px solid var(--gold);
+            top: -10px;
+            left: -10px;
+            width: 40px;
+            height: 40px;
+            border-top: 4px solid var(--gold);
+            border-left: 4px solid var(--gold);
         }
         .content-frame::after {
             content: '';
             position: absolute;
-            bottom: -15px;
-            right: -15px;
-            width: 60px;
-            height: 60px;
-            border-bottom: 5px solid var(--gold);
-            border-right: 5px solid var(--gold);
+            bottom: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            border-bottom: 4px solid var(--gold);
+            border-right: 4px solid var(--gold);
         }
 
         .bg-navy { background-color: var(--navy); }
@@ -146,27 +158,32 @@
         </div>
     </nav>
 
-<section class="relative h-screen min-h-[850px] flex items-center pt-20 overflow-hidden hero-gradient">
-<div class="slider-container" id="mainSlider">
-    <div class="slide" style="background-image: url('alur gercep 3 hari kerja banner.png');"></div>
-    <div class="slide" style="background-image: url('alur pendaftaran sk hak.jpeg');"></div>
-</div>
-
-   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center lg:justify-start">
-    <div id="heroTextContent" class="text-white animate-fade-in transition-all duration-700">
-        <div class="content-frame">
-            <h1 class="text-6xl lg:text-8xl font-extrabold leading-[1.1] mb-8 tracking-tighter">
-                Gerak Cepat <br><span class="text-gold italic">Pengukuran</span>
-            </h1>
-            <p class="text-xl lg:text-2xl text-slate-200 mb-12 leading-relaxed font-medium">
-                Inovasi Seksi Survei dan Pemetaan Kantor Pertanahan Kota Bitung dalam rangka memberikan kepastian jadwal pengukuran, kepastian jadwal penyelesaian, serta update informasi berkas secara real-time untuk masyarakat Kota Bitung.
-            </p>
+ <section class="relative h-screen min-h-[750px] flex items-center pt-20 overflow-hidden hero-gradient">
+        <div class="slider-container" id="mainSlider">
+            <div class="slide" style="background-image: url('gercep wana biru.jpg');"></div>
+            <div class="slide" style="background-image: url('alur gercep 3 hari kerja banner.jpg');"></div>
+            <div class="slide" style="background-image: url('gercep wana biru.jpg');"></div>
         </div>
-    </div>
-</div>
-</section>
 
+        <div class="slider-overlay"></div>
 
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center lg:justify-start">
+            <div id="heroTextContent" class="text-white animate-fade-in max-w-3xl transition-all duration-700">
+                <div class="content-frame">
+                    <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-6 tracking-tighter">
+                        Gerak Cepat <br><span class="text-gold italic">Pengukuran</span>
+                    </h1>
+                    <p class="text-lg lg:text-xl text-slate-200 mb-10 leading-relaxed font-medium text-center lg:text-left">
+                        Inovasi Seksi Survei dan Pemetaan Kantor Pertanahan Kota Bitung dalam rangka memberikan kepastian jadwal pengukuran, kepastian jadwal penyelesaian, serta update informasi berkas secara real-time untuk masyarakat Kota Bitung.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#tracking" class="px-10 py-4 btn-gold rounded-xl font-bold uppercase text-xs tracking-widest text-center shadow-2xl">Mulai Lacak</a>
+                        <a href="#stats" class="px-10 py-4 border border-white/40 hover:bg-white/10 rounded-xl font-bold uppercase text-xs tracking-widest transition-all text-center">Dashboard GERCEP!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="tracking" class="relative -mt-24 z-20 pb-20 scroll-mt-24">
         <div class="max-w-5xl mx-auto px-4">
@@ -289,49 +306,52 @@
         </div>
     </footer>
 
- <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 px-8 py-4 bg-navy text-gold rounded-2xl shadow-2xl text-sm font-bold opacity-0 translate-y-4 transition-all pointer-events-none z-[100] border border-gold/20">
+    <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 px-6 py-3 bg-navy text-gold rounded-xl shadow-2xl text-xs font-bold opacity-0 translate-y-4 transition-all pointer-events-none z-[100] border border-gold/20">
         <span id="toast-msg"></span>
     </div>
 
-
     <script>
+        // KONFIGURASI URL GAS (Gunakan yang paling baru)
         const GAS_URL = "https://script.google.com/macros/s/AKfycbwQq-QZPZ5JuW-v3YO6Mu90fl7ojMRn-sqLdBYOWoLTfpDrYNQaNiZPdKPZzRTfw_NX0w/exec";
 
+     // Slider Logic - Infinite Smooth Slide
+        const sliderContainer = document.getElementById('mainSlider');
+        const heroText = document.getElementById('heroTextContent');
+        let currentIdx = 0;
+        const totalSlides = 3; // 2 Asli + 1 Clone
 
-const sliderContainer = document.getElementById('mainSlider');
-const heroText = document.getElementById('heroTextContent');
-let currentIdx = 0;
-const slidesCount = 3;
+        function nextSlide() {
+            currentIdx++;
 
-function nextSlide() {
-    currentIdx++;
+            // Mulai transisi geser ke kiri
+            sliderContainer.style.transition = "transform 1.4s cubic-bezier(0.645, 0.045, 0.355, 1)";
+            sliderContainer.style.transform = `translateX(-${(currentIdx * 100) / totalSlides}%)`;
 
-    sliderContainer.style.transition = "transform 1.4s cubic-bezier(0.645, 0.045, 0.355, 1)";
-    sliderContainer.style.transform =
-        `translateX(-${(currentIdx * 100) / (slidesCount + 1)}%)`;
+            // Kontrol visibilitas teks "Gerak Cepat"
+            // Teks hanya muncul di slide 0 (awal) atau slide 2 (clone tampilan awal)
+            if (currentIdx === 0 || currentIdx === 2) {
+                heroText.style.opacity = "1";
+                heroText.style.transform = "translateY(0)";
+                heroText.style.pointerEvents = "auto";
+            } else {
+                heroText.style.opacity = "0";
+                heroText.style.transform = "translateY(20px)";
+                heroText.style.pointerEvents = "none";
+            }
 
-    if (currentIdx === slidesCount) {
-        setTimeout(() => {
-            sliderContainer.style.transition = "none";
-            currentIdx = 0;
-            sliderContainer.style.transform = `translateX(0)`;
-        }, 1400);
-    }
+            // Trik Infinite Loop: Reset posisi ke 0 tanpa animasi setelah slide clone selesai
+            if (currentIdx === totalSlides - 1) {
+                setTimeout(() => {
+                    sliderContainer.style.transition = "none";
+                    currentIdx = 0;
+                    sliderContainer.style.transform = `translateX(0)`;
+                }, 1400); // Harus sama dengan durasi transition CSS (1.4s)
+            }
+        }
 
-    if (currentIdx !== 0) {
-        heroText.style.opacity = "0";
-        heroText.style.pointerEvents = "none";
-        setTimeout(() => { heroText.style.display = "none"; }, 400);
-    } else {
-        heroText.style.display = "block";
-        setTimeout(() => {
-            heroText.style.opacity = "1";
-            heroText.style.pointerEvents = "auto";
-        }, 50);
-    }
-}
+        // Jalankan setiap 7 detik agar user sempat membaca
+        setInterval(nextSlide, 7000);
 
-setInterval(nextSlide, 7000);
         // Menu Mobile
         const menuBtn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
