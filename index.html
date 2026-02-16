@@ -152,10 +152,10 @@
 
   <section class="relative h-screen min-h-[850px] overflow-hidden hero-gradient">
     <div class="slider-wrapper w-full h-full">
-     <div class="slider-container h-full flex" id="mainSlider" style="width: 300%; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);">
-
+        <div class="slider-container h-full flex" id="mainSlider" style="width: 400%; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);">
             
-        
+           <div class="slide w-1/4 h-full relative flex items-center justify-center text-center" style="background-image: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)), url('gercep wana biru.jpg'); background-size: cover; background-position: center;">
+    <div class="w-full flex justify-center px-4">
         <div id="heroTextContent" class="text-white animate-fade-in">
             <div class="content-frame hero-float mx-auto">
                 <h1 class="text-6xl lg:text-8xl font-extrabold leading-[1.1] mb-8 tracking-tighter">
@@ -318,7 +318,7 @@ let globalInformasi = [];
 
 const sliderContainer = document.getElementById('mainSlider');
 let currentIdx = 0;
-const totalSlides = 3; 
+const totalSlides = 4; // karena kamu punya 4 slide
 
 function nextSlide() {
     currentIdx++;
@@ -547,4 +547,4 @@ window.onload=()=>{
 </script>
 
     </body>
-</html>
+</html> 
