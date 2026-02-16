@@ -311,23 +311,17 @@ let perfChart;
 let globalInformasi = [];
 
 const sliderContainer = document.getElementById('mainSlider');
-const heroText = document.getElementById('heroTextContent');
+const slides = document.querySelectorAll('.slide');
 let currentIdx = 0;
-const slidesCount = 3;
+const slidesCount = slides.length;
 
 function nextSlide() {
-    currentIdx++;
-    sliderContainer.style.transition = "transform 1.2s cubic-bezier(0.645,0.045,0.355,1)";
-    sliderContainer.style.transform = `translateX(-${(currentIdx * 100) / (slidesCount + 1)}%)`;
-    if (currentIdx === slidesCount) {
-        setTimeout(() => {
-            sliderContainer.style.transition = "none";
-            currentIdx = 0;
-            sliderContainer.style.transform = `translateX(0)`;
-        },1200);
-    }
+    currentIdx = (currentIdx + 1) % slidesCount;
+    sliderContainer.style.transform = `translateX(-${currentIdx * 25}%)`;
 }
-setInterval(nextSlide,5000);
+
+setInterval(nextSlide, 5000);
+
 
 const menuBtn = document.getElementById('mobile-menu-btn');
 const menu = document.getElementById('mobile-menu');
