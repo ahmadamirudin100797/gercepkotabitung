@@ -37,14 +37,13 @@
 
         }
 
-        .slide {
-            width: 25%; 
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            flex-shrink: 0;
-        }
-
+    .slide {
+    width: 25%; 
+    height: 100%;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+}
         .content-frame {
             border: 2px solid rgba(255,215,0,0.3);
             padding: 4rem;
@@ -151,37 +150,39 @@
         </div>
     </nav>
 
-   <section class="relative h-screen min-h-[850px] flex items-center pt-20 overflow-hidden hero-gradient">
+  <section class="relative h-screen min-h-[850px] overflow-hidden hero-gradient">
     <div class="slider-wrapper w-full h-full">
-        <div class="slider-container h-full" id="mainSlider">
-            <div class="slide relative flex items-center" style="background-image: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)), url('gercep wana biru.jpg');">
+        <div class="slider-container h-full flex" id="mainSlider" style="width: 400%; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);">
+            
+            <div class="slide w-1/4 h-full relative flex items-center" style="background-image: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)), url('gercep wana biru.jpg'); background-size: cover; background-position: center;">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                    <div id="heroTextContent" class="text-white animate-fade-in">
+                    <div id="heroTextContent" class="text-white animate-fade-in inline-block">
                         <div class="content-frame hero-float">
                             <h1 class="text-6xl lg:text-8xl font-extrabold leading-[1.1] mb-8 tracking-tighter">
                                 Gerak Cepat <br><span class="text-gold italic">Pengukuran</span>
                             </h1>
-                            <p class="text-xl lg:text-2xl text-slate-200 mb-12 leading-relaxed font-medium">
-                                Inovasi Seksi Survei dan Pemetaan Kantor Pertanahan Kota Bitung...
+                            <p class="text-xl lg:text-2xl text-slate-200 mb-12 leading-relaxed font-medium max-w-2xl">
+                                Inovasi Seksi Survei dan Pemetaan Kantor Pertanahan Kota Bitung dalam rangka memberikan kepastian jadwal pengukuran.
                             </p>
                             <div class="flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-6">
                                 <a href="#tracking" class="px-12 py-5 btn-gold rounded-2xl font-black uppercase text-sm tracking-widest text-center shadow-2xl">Mulai Lacak</a>
-                                <a href="#stats" class="px-12 py-5 border-2 border-white/40 hover:bg-white/10 rounded-2xl font-black uppercase text-sm tracking-widest transition-all text-center">Dashboard GERCEP!</a>
+                                <a href="#stats" class="px-12 py-5 border-2 border-white/40 hover:bg-white/10 rounded-2xl font-black uppercase text-sm tracking-widest transition-all text-center">Dashboard!</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="slide" style="background-image: url('alur gercep 3 hari kerja banner.png');"></div>
+            <div class="slide w-1/4 h-full" style="background-image: url('alur gercep 3 hari kerja banner.png'); background-size: cover; background-position: center;"></div>
             
-            <div class="slide" style="background-image: url('alur pendaftaran sk hak.jpeg');"></div>
+            <div class="slide w-1/4 h-full" style="background-image: url('alur pendaftaran sk hak.jpeg'); background-size: cover; background-position: center;"></div>
             
-            <div class="slide" style="background-image: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)), url('gercep wana biru.jpg');"></div>
+            <div class="slide w-1/4 h-full" style="background-image: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)), url('gercep wana biru.jpg'); background-size: cover; background-position: center;"></div>
+
         </div>
     </div>
-    
-    <div class="absolute inset-0 bg-gradient-to-b from-navy/30 via-navy/60 to-navy z-1 pointer-events-none"></div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-navy/10 via-transparent to-navy/40 z-1 pointer-events-none"></div>
 </section>
     <section id="tracking" class="relative -mt-24 z-20 pb-20 scroll-mt-24">
         <div class="max-w-5xl mx-auto px-4">
